@@ -14,7 +14,7 @@ During the training stage an `n*m` weight/coefficient matrix is trained, where `
 
 They also train an `a*m` Signature matrix in an unsupervised manner. `a` is a number of (binary or soft) class attributes which can be found in the dataset, from external data, or in an unsupervised manner.
 
-For instance, when the classes are: `bear` and `horse` and the attributes are `[brown, can_ride, dangerous]` the Signature matrix may look like:
+For instance, when the classes are: `bear` and `horse` and the attributes are `[brown, can_ride, domesticated]` the Signature matrix may look like:
 
 ```
 bear horse
