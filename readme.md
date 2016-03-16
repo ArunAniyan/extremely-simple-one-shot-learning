@@ -81,3 +81,13 @@ To create predictions for the unseen classes we take 1 sample per new class and 
 We use `V` and `S'` to calculate `~W'` with size `64*4`. Now for all test samples we calculate `np.argmax( np.dot( x.T, ~W' )` to get a class prediction.
 
 We obtain a multi-class accuracy of `0.846` with 50 labeled samples per class, `0.759` with 10 labeled samples per class, and a variant accuracy of `0.609` with 1 labeled sample per class. By comparison: random guessing is `0.25` accuracy.
+
+### Note
+
+We used a very simple toy dataset and non-rigorous method of evaluation. The goal was to replicate the basic idea with an extremely simple baseline, not to obtain (or claim) state-of-the-art performance.
+
+One-shot learning has less constraints than zero-shot learning approach (we need at least one labeled sample, or another model communicating this as a vector). But we do get to use this approach when no class attributes are available.
+
+We completely gloss over one of the main contributions in the paper: Regularization of the V matrix. We calculate V from W and S with least-squares. The paper includes a regularizer with more favourable properties.
+
+See the original Matlab code here: https://dl.dropboxusercontent.com/u/5961057/ESZSL_v0.1.zip and a repository with the code for the real data experiments in the paper here: https://github.com/bernard24/Embarrassingly-simple-ZSL
